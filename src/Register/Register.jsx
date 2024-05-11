@@ -1,10 +1,32 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
 
 
 const Register = () => {
+    const {createUser} = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
+
+    const handleRegister = e =>{
+        e.preventDefault();
+        console.log(e.currentTarget);
+        const form = new FormData(e.currentTarget);
+        const name = form.get('name');
+        const photo = form.get('photo');
+        const email = form.get('email');
+        const password = form.get('password');
+        console.log(name, photo, email, password);
+
+        createUser(email, password)
+        .then(result =>{
+            console.log(result.user)
+        })
+        .catch(error =>{
+            console.error(error)
+        })
+    }
+
     return (
         <div className="">
             <div className="">
@@ -12,7 +34,7 @@ const Register = () => {
 
               
         <h2 className="text-center text-xl">Please Register</h2>
-         <form  className="card-body md:w-3/4 lg:w-1/2 mx-auto">
+         <form onSubmit={handleRegister} className="card-body md:w-3/4 lg:w-1/2 mx-auto">
     <div className="form-control">
       <label className="label">
         <span className="label-text">User Name</span>
