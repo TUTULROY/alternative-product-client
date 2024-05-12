@@ -1,12 +1,17 @@
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext);
+    const {createUser, updateUserProfile, setLoading} = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
+      
+  
+      const from ="/"
 
     const handleRegister = e =>{
         e.preventDefault();
@@ -18,9 +23,50 @@ const Register = () => {
         const password = form.get('password');
         console.log(name, photo, email, password);
 
+        const uppercaseRegex = /[A-Z]/;
+        const lowercaseRegex = /[a-z]/;
+        if(password.length<6 || !uppercaseRegex.test(password) || !lowercaseRegex.test(password))
+        {
+            Swal.fire({
+                icon: "error",
+                title: "Password must contain at least 6 characters with both uppercase and lowercase letters.",
+                showConfirmButton: false,
+                timer: 2000
+            });
+            return;
+        }
+
         createUser(email, password)
         .then(result =>{
             console.log(result.user)
+
+            const user = {email};
+            fetch('http://localhost:5000/user',{
+                method: 'POST',
+                headers:{
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(user)
+
+            })
+            .then(res =>res.json())
+            .then(data =>{
+               if(data.insertedId){
+                Swal.fire({
+                    title: 'success!',
+                    text: 'User added',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'
+                  })
+                  updateUserProfile(name, photo)
+                  .then(() =>{
+                    setLoading(true)
+                      navigate(from);
+                      
+                  }) 
+               }
+            })
+
         })
         .catch(error =>{
             console.error(error)

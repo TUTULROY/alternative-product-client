@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import img1 from '../assets/computer-security-with-login-passw-ord-padlock.jpg'
 
 const Login = () => {
+    
     return (
         <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row">
