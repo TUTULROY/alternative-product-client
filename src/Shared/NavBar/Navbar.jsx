@@ -1,13 +1,33 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 
 const Navbar = () => {
-
+  const {user, logOut} = useContext(AuthContext);
+  const handleLogOut =()=>{
+    logOut()
+    .then(()=>{})
+    .catch(error => console.log(error))
+  }
   const navLinks = <>
   <li><Link to="/"> Home</Link></li>
   <li><Link to="/queries">Queries</Link></li>
-  <li><Link to="/login">Login</Link></li>
-  
+  {
+    user?.email ?
+    <>
+     <li><Link to="/recommendations">Recommendations
+For Me</Link></li>
+     
+     <li><Link to="/my-queries">My Queries </Link></li>
+     <li><Link to="/my-recommendations">My Recommendations</Link></li>
+     <li><button onClick={handleLogOut}>Log Out</button></li>
+     </>
+    : <li><Link to="/login">Login</Link></li>
+   }
+
+    
+
   </>
 
     return (
@@ -34,9 +54,20 @@ const Navbar = () => {
              }
           </ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
+        {
+        user? <div className="navbar-end tooltip tooltip-bottom z-3 tooltip-primary" data-tip={user.displayName}>
+         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+  <div className="w-10 rounded-full ">
+    <img src={user?.photoURL || "https://i.postimg.cc/5N1C1vBJ/Tutul-roy.jpg"}  />
+  </div>
+</label>
+        
         </div>
+        :
+      <div className="w-10 rounded-full hidden">
+        <img src="https://i.postimg.cc/5N1C1vBJ/Tutul-roy.jpg" alt="" />
+      </div>
+        }
       </div>
     );
 };
