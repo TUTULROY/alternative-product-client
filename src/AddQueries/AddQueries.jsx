@@ -19,8 +19,8 @@ const AddQueries = () => {
         const boycotting_reason_details =form.boycotting_reason_details.value;
         const product_photo = form.product_photo.value;
         const email = user?.email;
-      const photo = user?.photo;
-    const name = user?.name;
+      const photo = user?.photoURL;
+    const name = user?.displayName;
         
 
         const newProducts= {
@@ -31,7 +31,8 @@ const AddQueries = () => {
             product_photo,
             email,
             name, 
-            photo
+            photo,
+            recommendationCount: 0
            
         }
         fetch('http://localhost:5000/products',{
