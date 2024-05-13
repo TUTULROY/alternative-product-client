@@ -11,11 +11,11 @@ const Banner = () => {
         <img src={ima1} className="w-full rounded-xl" />
         <div className="absolute flex items-center h-full  left-0 right-0 bg-gradient-to-r from-[#151515] to-[rgba(21. 21, 21, 0)] rounded-xl">
           <div className='text-white space-y-7 pl-12 w-1/3'>
-            <h2 className='text-6xl font-bold'>
-            Affordable Price For Car Servicing
+            <h2 className='text-5xl font-bold'>
+            Alternative products are interchangeable, very similar, or comparable products
             </h2>
             <p>
-            There are many variations of passages of  available, but the majority have suffered alteration in some form
+            Alternative products are interchangeable, very similar, or comparable products that can be substituted during a sale or during production if the original product is out of stock.
             </p>
             <div>
             <Link to='/add_products'>
@@ -34,11 +34,11 @@ const Banner = () => {
       <img src={ima2} className="w-full rounded-xl" />
         <div className="absolute flex items-center h-full  left-0 right-0 bg-gradient-to-r from-[#151515] to-[rgba(21. 21, 21, 0)] rounded-xl">
           <div className='text-white space-y-7 pl-12 w-1/3'>
-            <h2 className='text-6xl font-bold'>
-            Affordable Price For Car Servicing
+            <h2 className='text-5xl font-bold'>
+            Alternative products are interchangeable, very similar, or comparable products
             </h2>
             <p>
-            There are many variations of passages of  available, but the majority have suffered alteration in some form
+            Alternative products are interchangeable, very similar, or comparable products that can be substituted during a sale or during production if the original product is out of stock.
             </p>
             <div>
             <Link to='/add_products'>
@@ -57,11 +57,11 @@ const Banner = () => {
       <img src={ima3} className="w-full rounded-xl" />
         <div className="absolute flex items-center rounded-xl h-full  left-0 right-0 bg-gradient-to-r from-[#151515] to-[rgba(21. 21, 21, 0)]">
           <div className='text-white space-y-7 pl-12 w-1/3'>
-            <h2 className='text-6xl font-bold'>
-            Affordable Price For Car Servicing
+            <h2 className='text-5xl font-bold'>
+            Alternative products are interchangeable, very similar, or comparable products
             </h2>
             <p>
-            There are many variations of passages of  available, but the majority have suffered alteration in some form
+            Alternative products are interchangeable, very similar, or comparable products that can be substituted during a sale or during production if the original product is out of stock.
             </p>
             <div>
             <Link to='/add_products'>
@@ -80,11 +80,11 @@ const Banner = () => {
       <img src={ima4} className="w-full rounded-xl" />
         <div className="absolute flex items-center rounded-xl h-full  left-0 right-0 bg-gradient-to-r from-[#151515] to-[rgba(21. 21, 21, 0)]">
           <div className='text-white space-y-7 pl-12 w-1/3'>
-            <h2 className='text-6xl font-bold'>
-            Affordable Price For Car Servicing
+            <h2 className='text-5xl font-bold'>
+            Alternative products are interchangeable, very similar, or comparable products
             </h2>
             <p>
-            There are many variations of passages of  available, but the majority have suffered alteration in some form
+            Alternative products are interchangeable, very similar, or comparable products that can be substituted during a sale or during production if the original product is out of stock.
             </p>
             <div>
             <Link to='/add_products'>
