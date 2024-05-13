@@ -18,6 +18,7 @@ const AddQueries = () => {
         const query_title = form.query_title.value;
         const boycotting_reason_details =form.boycotting_reason_details.value;
         const product_photo = form.product_photo.value;
+        const alternation_reason = form.alternation_reason.value;
         const email = user?.email;
       const photo = user?.photoURL;
     const name = user?.displayName;
@@ -29,6 +30,7 @@ const AddQueries = () => {
             query_title,
             boycotting_reason_details,
             product_photo,
+            alternation_reason,
             email,
             name, 
             photo,
@@ -124,6 +126,15 @@ const AddQueries = () => {
 
 
         <div className="md:flex mb-8">
+            <div className="form-control md:w-1/2 mr-4">
+            <label className="label">
+                <span className="label-text">Alternation Reason</span>
+            </label>
+            <label className="input-group">
+                
+                <input type="email" name="alternation_reason" placeholder="Alternation Reason" className="input input-bordered w-full " />
+            </label>
+            </div> 
             <div className="form-control md:w-1/2">
             <label className="label">
                 <span className="label-text">Your Email</span>

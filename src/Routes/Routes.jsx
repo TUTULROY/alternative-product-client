@@ -6,6 +6,8 @@ import Register from "../Register/Register";
 import PrivateRoutes from "./PrivateRoutes";
 import AddQueries from "../AddQueries/AddQueries";
 import Queries from "../Queries/Queries";
+import ErrorPage from "../layouts/ErrorPage/ErrorPage";
+import MyQueries from "../MyQueries/MyQueries";
 
 
 
@@ -14,10 +16,12 @@ const router = createBrowserRouter([
     {
       path: "/",
       element: <Root></Root>,
+      errorElement:<ErrorPage></ErrorPage>,
       children:[
         {
             path:'/',
-            element:<Home></Home>
+            element:<Home></Home>,
+            loader:()=> fetch('http://localhost:5000/products')
         },
         {
             path:'/login',
@@ -36,6 +40,10 @@ const router = createBrowserRouter([
         {
             path:'/queries',
             element:<Queries></Queries>
+        },
+        {
+            path:'/my-queries',
+            element:<MyQueries></MyQueries>
         }
       ]
     },

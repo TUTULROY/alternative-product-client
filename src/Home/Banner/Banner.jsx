@@ -21,8 +21,8 @@ const Banner = () => {
             <Link to='/add_products'>
             <button className="btn btn-warning mr-5">Add Products</button>
             </Link>
-            <Link to='/recent_queries'>
-            <button className="btn btn-outline btn-secondary">Recent Queries</button>
+            <Link to='/queries'>
+            <button className="btn btn-outline btn-secondary">Queries</button>
             </Link>
             </div>
           </div>
@@ -46,8 +46,8 @@ const Banner = () => {
             <Link to='/add_products'>
             <button className="btn btn-warning mr-5">Add Products</button>
             </Link>
-            <Link to='/recent_queries'>
-            <button className="btn btn-outline btn-secondary">Recent Queries</button>
+            <Link to='/queries'>
+            <button className="btn btn-outline btn-secondary">Queries</button>
             </Link>
             </div>
           </div>
@@ -71,8 +71,8 @@ const Banner = () => {
             <Link to='/add_products'>
             <button className="btn btn-warning mr-5">Add Products</button>
             </Link>
-            <Link to='/recent_queries'>
-            <button className="btn btn-outline btn-secondary">Recent Queries</button>
+            <Link to='/queries'>
+            <button className="btn btn-outline btn-secondary">Queries</button>
             </Link>
             </div>
           </div>
@@ -96,8 +96,8 @@ const Banner = () => {
             <Link to='/add_products'>
             <button className="btn btn-warning mr-5">Add Products</button>
             </Link>
-            <Link to='/recent_queries'>
-            <button className="btn btn-outline btn-secondary">Recent Queries</button>
+            <Link to='/queries'>
+            <button className="btn btn-outline btn-secondary">Queries</button>
             </Link>
             </div>
           </div>
