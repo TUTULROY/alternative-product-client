@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 
-const MyQuery = ({item}) => {
+const MyQuery = ({item, handleDelete}) => {
     const {_id, products_name,
         products_brand,
         
@@ -21,7 +21,7 @@ const MyQuery = ({item}) => {
       <Link to={`/detailsPages/${_id}`}>
       <button className="btn btn-primary">View Details</button>
       </Link>
-      <button className="btn btn-primary">Buy Now</button>
+      <button onClick={()=> handleDelete(_id)} className="btn btn-error">DELETE</button>
       <button className="btn btn-primary">Buy Now</button>
     </div>
   </div>

@@ -3,6 +3,7 @@ import img1 from '../assets/computer-security-with-login-passw-ord-padlock.jpg'
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import SocialLogin from "./SocialLogin/SocialLogin";
 
 
 const Login = () => {
@@ -75,6 +76,7 @@ const Login = () => {
           <button className="btn btn-primary">Login</button>
         </div>
       </form>
+      <SocialLogin></SocialLogin>
       <p className="text-center mb-1"> Please Register first<Link className="text-blue-500 font-bold" to="/register">Register</Link></p>
     </div>
   </div>
