@@ -8,7 +8,7 @@ const AddRecommendation = () => {
     const queries = useLoaderData();
     // const {query_title, products_name, name, photo, email}=query;
     const {user} = useContext(AuthContext);
-    console.log(queries);
+    
     const handleAddRecommendations = event =>{
         event.preventDefault();
         

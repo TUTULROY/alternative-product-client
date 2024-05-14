@@ -19,7 +19,7 @@ const RecentQueries = ({recentQuery}) => {
     <p>{products_brand}</p>
     <p>{query_title}</p>
     <p>{alternation_reason}</p>
-    <p>{dateAdd}</p>
+    <p>{new Date(dateAdd).toLocaleDateString()}</p>
 
     <div className="card-actions">
    <div className="flex ">

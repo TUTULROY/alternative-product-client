@@ -22,7 +22,9 @@ const MyQuery = ({item, handleDelete}) => {
       <button className="btn btn-primary">View Details</button>
       </Link>
       <button onClick={()=> handleDelete(_id)} className="btn btn-error">DELETE</button>
-      <button className="btn btn-primary">Buy Now</button>
+      <Link to={`/updates/${item._id}`}>
+                            <button className="btn btn-active btn-accent">Update</button>
+                            </Link>
     </div>
   </div>
 </div>
