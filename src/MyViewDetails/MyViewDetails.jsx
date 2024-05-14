@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 
@@ -39,7 +39,9 @@ const MyViewDetails = () => {
     </div>
     <div className="gap-3">
       <button className="btn btn-primary gap-3 mr-7">Recommendation Count:{recommendationCount}</button>
-      <button className="btn btn-primary ml-7">Add Recommendation</button>
+     <Link to='/recommendations'>
+     <button className="btn btn-primary ml-7">Add Recommendation</button>
+     </Link>
       </div>
     </div>
   </div>

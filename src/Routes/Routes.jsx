@@ -9,6 +9,7 @@ import Queries from "../Queries/Queries";
 import ErrorPage from "../layouts/ErrorPage/ErrorPage";
 import MyQueries from "../MyQueries/MyQueries";
 import MyViewDetails from "../MyViewDetails/MyViewDetails";
+import AddRecommendation from "../AddRecommendation/AddRecommendation";
 
 
 
@@ -41,7 +42,7 @@ const router = createBrowserRouter([
         {
             path:'/queries',
             element:<Queries></Queries>
-            // loader:() => fetch('http://localhost:5000/products')
+            
         },
         {
             path:'/my-queries',
@@ -54,6 +55,11 @@ const router = createBrowserRouter([
             element:<PrivateRoutes><MyViewDetails></MyViewDetails></PrivateRoutes>,
             loader:({params})=> fetch(`http://localhost:5000/products/${params.id}`)
             
+        },
+        {
+            path:'/recommendations',
+            element:<AddRecommendation></AddRecommendation>,
+            loader: () =>fetch('http://localhost:5000/products')
         }
       ]
     },
