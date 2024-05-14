@@ -10,7 +10,7 @@ const Home = () => {
         <div className="">
            
             <Banner></Banner>
-            <div className="grid lg:grid-cols-3 m-4">
+            <div className="grid lg:grid-cols-3 mt-4 mb-4 gap-5">
 
                 {
                     recentQueries.map(recentQuery => <RecentQueries key={recentQuery._id}

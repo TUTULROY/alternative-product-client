@@ -8,6 +8,7 @@ import AddQueries from "../AddQueries/AddQueries";
 import Queries from "../Queries/Queries";
 import ErrorPage from "../layouts/ErrorPage/ErrorPage";
 import MyQueries from "../MyQueries/MyQueries";
+import MyViewDetails from "../MyViewDetails/MyViewDetails";
 
 
 
@@ -43,7 +44,15 @@ const router = createBrowserRouter([
         },
         {
             path:'/my-queries',
-            element:<MyQueries></MyQueries>
+            element:<PrivateRoutes>
+                <MyQueries></MyQueries>
+            </PrivateRoutes>
+        },
+        {
+            path:'/detailsPages/:id',
+            element:<PrivateRoutes><MyViewDetails></MyViewDetails></PrivateRoutes>,
+            loader:({params})=> fetch(`http://localhost:5000/products/${params.id}`)
+            
         }
       ]
     },

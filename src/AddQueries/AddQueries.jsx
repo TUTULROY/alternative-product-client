@@ -132,7 +132,7 @@ const AddQueries = () => {
             </label>
             <label className="input-group">
                 
-                <input type="email" name="alternation_reason" placeholder="Alternation Reason" className="input input-bordered w-full " />
+                <input type="text" name="alternation_reason" placeholder="Alternation Reason" className="input input-bordered w-full " />
             </label>
             </div> 
             <div className="form-control md:w-1/2">
