@@ -15,7 +15,7 @@ const MyViewDetails = () => {
         dateAdd,
         recommendationCount}=views;
         
-    
+        
 
     return (
         <div className="hero min-h-screen bg-base-200">

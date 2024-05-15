@@ -48,8 +48,7 @@ const MyQueries = () => {
                 text: "Your file has been deleted.",
                 icon: "success"
               });
-            //   const remaining = items.filter(item => item._id !== id);
-            //   setItem(remaining);
+           
                 }
             })
             }

@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -6,10 +6,13 @@ import Swal from "sweetalert2";
 
 const AddRecommendation = () => {
     const {user} = useContext(AuthContext);
+    
     const queries = useLoaderData();
     // const { query_title, products_name, name, photo, email}=queries;
     
     console.log(queries);
+    const [recommendationCount, setRecommendationCount] = useState(queries.recommendationCount);
+    console.log(recommendationCount);
     const handleAddRecommendations = event =>{
         event.preventDefault();
         
@@ -18,16 +21,17 @@ const AddRecommendation = () => {
         const recommendation_title = form.recommendation_title.value;
         const recommended_product_name = form.recommended_product_name.value;
         const query_title = queries.query_title;
+        const recommendationCount= queries.recommendationCount;
         const products_name = queries.products_name;
         const queryId = queries._id;
         const image = form.image.value;
         const recommendation_reason = form.recommendation_reason.value;
         const User_email = queries.email;
         const User_photo = queries.photo;
-        const name = queries.name;
-        const email2 = user?.email;
-        const photo2 = user?.photoURL;
-        const name2 = user?.displayName;
+        const User_name = queries.name;
+        const email = user?.email;
+        const photo = user?.photoURL;
+        const name = user?.displayName;
 
         const newRecommendations= {
 
@@ -39,11 +43,12 @@ const AddRecommendation = () => {
                     recommendation_reason,
                     recommended_product_name,
                     User_email,
-                    name, 
+                    User_name, 
                     User_photo,
-                    email2,
-                    photo2,
-                    name2 
+                    email,
+                    photo,
+                    name ,
+                    recommendationCount
         }
         fetch('http://localhost:5000/recommendation',{
             method:'POST',
@@ -56,6 +61,7 @@ const AddRecommendation = () => {
         .then(data =>{
             console.log(data);
             if(data.insertedId){
+                setRecommendationCount(recommendationCount + 1);
                 Swal.fire({
                     title: 'success!',
                     text: 'Products added',
@@ -110,7 +116,7 @@ const AddRecommendation = () => {
         </label>
         <label className="input-group">
             
-            <input type="email" name="email2" defaultValue={user?.email} placeholder="Your Email" className="input input-bordered w-full " />
+            <input type="email" name="email" defaultValue={user?.email} placeholder="Your Email" className="input input-bordered w-full " />
         </label>
         </div> 
         </div>
