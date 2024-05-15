@@ -5,7 +5,7 @@ const Recommendation = () => {
     const [table, setTable] = useState([]);
     useEffect(()=>{
         
-        fetch('http://localhost:5000/recommendation')
+        fetch('https://crud-alternative-product-server.vercel.app/recommendation')
         .then(res => res.json())
         .then(data =>{
             

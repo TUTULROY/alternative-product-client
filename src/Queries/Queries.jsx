@@ -8,7 +8,7 @@ const Queries = () => {
     const [queries, setQuery] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/products')
+        fetch('https://crud-alternative-product-server.vercel.app/products')
         .then(res => res.json())
         .then(data =>{
             const sortedQueries = data.sort((a, b) => new Date(b.dateAdd) - new Date(a.dateAdd));

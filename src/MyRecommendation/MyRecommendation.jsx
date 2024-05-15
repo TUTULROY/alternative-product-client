@@ -14,7 +14,7 @@ const MyRecommendation = () => {
     const from ="/my-recommendations"
     useEffect(()=>{
         
-        fetch(`http://localhost:5000/myRecommendation/${user?.email}`)
+        fetch(`https://crud-alternative-product-server.vercel.app/myRecommendation/${user?.email}`)
         .then(res => res.json())
         .then(data =>{
             
@@ -37,7 +37,7 @@ const MyRecommendation = () => {
           }).then((result) => {
             if (result.isConfirmed) {
             
-            fetch(`http://localhost:5000/recommendation/${id}`,{
+            fetch(`https://crud-alternative-product-server.vercel.app/recommendation/${id}`,{
                 method:'DELETE'
             })
             .then(res => res.json())

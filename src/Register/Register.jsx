@@ -41,7 +41,7 @@ const Register = () => {
             console.log(result.user)
 
             const user = {email};
-            fetch('http://localhost:5000/user',{
+            fetch('https://crud-alternative-product-server.vercel.app/user',{
                 method: 'POST',
                 headers:{
                     'content-type': 'application/json'

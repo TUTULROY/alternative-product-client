@@ -15,7 +15,7 @@ const MyQueries = () => {
 
     useEffect(()=>{
         
-        fetch(`http://localhost:5000/myQueries/${user?.email}`)
+        fetch(`https://crud-alternative-product-server.vercel.app/myQueries/${user?.email}`, {credentials: 'include'})
         .then(res => res.json())
         .then(data =>{
             const sortedQueries = data.sort((a, b) => new Date(b.dateAdd) - new Date(a.dateAdd));
@@ -36,7 +36,7 @@ const MyQueries = () => {
           }).then((result) => {
             if (result.isConfirmed) {
             
-            fetch(`http://localhost:5000/products/${id}`,{
+            fetch(`https://crud-alternative-product-server.vercel.app/products/${id}`,{
                 method:'DELETE'
             })
             .then(res => res.json())

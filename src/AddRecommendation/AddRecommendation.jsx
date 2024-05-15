@@ -50,7 +50,7 @@ const AddRecommendation = () => {
                     name ,
                     recommendationCount
         }
-        fetch('http://localhost:5000/recommendation',{
+        fetch('https://crud-alternative-product-server.vercel.app/recommendation',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

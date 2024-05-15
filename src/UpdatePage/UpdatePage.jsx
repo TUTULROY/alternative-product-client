@@ -27,7 +27,7 @@ const UpdatePage = () => {
         console.log(updatedProduct);
     
     
-        fetch(`http://localhost:5000/products/${_id}`,{
+        fetch(`https://crud-alternative-product-server.vercel.app/products/${_id}`,{
             method:'PUT',
             headers:{
                 'content-type':'application/json'
