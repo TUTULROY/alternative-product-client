@@ -5,43 +5,45 @@ import Swal from "sweetalert2";
 
 
 const AddRecommendation = () => {
-    const queries = useLoaderData();
-    // const {query_title, products_name, name, photo, email}=query;
     const {user} = useContext(AuthContext);
+    const queries = useLoaderData();
+    // const { query_title, products_name, name, photo, email}=queries;
     
+    console.log(queries);
     const handleAddRecommendations = event =>{
         event.preventDefault();
         
         const form = event.target;
-        const selectedQuery = queries[''];
-        // const Products = selectedQuery.products_name;
+        
         const recommendation_title = form.recommendation_title.value;
         const recommended_product_name = form.recommended_product_name.value;
-        const Query = selectedQuery.query_title;
-        
+        const query_title = queries.query_title;
+        const products_name = queries.products_name;
+        const queryId = queries._id;
         const image = form.image.value;
         const recommendation_reason = form.recommendation_reason.value;
-        const User_email = selectedQuery.email;
-        const User_photo = selectedQuery.photo;
-        const user_name = selectedQuery.name;
+        const User_email = queries.email;
+        const User_photo = queries.photo;
+        const name = queries.name;
         const email2 = user?.email;
         const photo2 = user?.photoURL;
         const name2 = user?.displayName;
 
         const newRecommendations= {
-            // Products,
-            
-            Query,
-           image,
-           recommendation_title,
-            recommendation_reason,
-            recommended_product_name,
-            User_email,
-            user_name, 
-            User_photo,
-           email2,
-           photo2,
-           name2          
+
+                    queryId,
+                    products_name,
+                    query_title,
+                    image,
+                    recommendation_title,
+                    recommendation_reason,
+                    recommended_product_name,
+                    User_email,
+                    name, 
+                    User_photo,
+                    email2,
+                    photo2,
+                    name2 
         }
         fetch('http://localhost:5000/recommendation',{
             method:'POST',
@@ -125,8 +127,7 @@ const AddRecommendation = () => {
         </div> 
        
         </div>
-
-        
+       
         <input type="submit" value="Add Recommendation" className="btn btn-block bg-green-400 mb-2" />
     </form>
 </div>

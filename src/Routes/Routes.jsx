@@ -11,6 +11,7 @@ import MyQueries from "../MyQueries/MyQueries";
 import MyViewDetails from "../MyViewDetails/MyViewDetails";
 import AddRecommendation from "../AddRecommendation/AddRecommendation";
 import UpdatePage from "../UpdatePage/UpdatePage";
+import MyRecommendation from "../MyRecommendation/MyRecommendation";
 
 
 
@@ -58,14 +59,20 @@ const router = createBrowserRouter([
             
         },
         {
-            path:'/recommendations',
+            path:'/recommendations/:id',
             element:<AddRecommendation></AddRecommendation>,
-            loader: () =>fetch('http://localhost:5000/products')
+            loader:({params})=> fetch(`http://localhost:5000/products/${params.id}`)
         },
         {
             path:'/updates/:id',
             element:<PrivateRoutes><UpdatePage></UpdatePage></PrivateRoutes>,
             loader:({params})=> fetch(`http://localhost:5000/products/${params.id}`)
+        },
+        {
+            path:'/my-recommendations',
+            element:<PrivateRoutes>
+                <MyRecommendation></MyRecommendation>
+            </PrivateRoutes>
         }
       ]
     },

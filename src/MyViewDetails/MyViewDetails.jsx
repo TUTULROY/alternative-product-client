@@ -4,7 +4,7 @@ import { Link, useLoaderData } from "react-router-dom";
 
 const MyViewDetails = () => {
     const views = useLoaderData();
-    const {products_name,
+    const {_id, products_name,
         products_brand,
         query_title,
         product_photo,
@@ -39,7 +39,7 @@ const MyViewDetails = () => {
     </div>
     <div className="gap-3">
       <button className="btn btn-primary gap-3 mr-7">Recommendation Count:{recommendationCount}</button>
-     <Link to='/recommendations'>
+     <Link to={`/recommendations/${_id}`}>
      <button className="btn btn-primary ml-7">Add Recommendation</button>
      </Link>
       </div>

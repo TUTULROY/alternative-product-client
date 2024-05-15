@@ -34,7 +34,7 @@ const AddQueries = () => {
             email,
             name, 
             photo,
-            recommendationCount: 0
+          
            
         }
         fetch('http://localhost:5000/products',{
