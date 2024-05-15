@@ -63,7 +63,7 @@ For Me</Link></li>
           </div>
           <Link to='/' className="btn btn-ghost text-xl">
         <img  className="w-12 rounded-full" src={logo} alt="" />
-
+        <h1 className="text-3xl text-green-300">T.R Shop</h1>
     </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -89,6 +89,7 @@ For Me</Link></li>
          <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
   <div className="w-10 rounded-full ">
     <img src={user?.photoURL || "https://i.postimg.cc/5N1C1vBJ/Tutul-roy.jpg"}  />
+    
   </div>
 </label>
         

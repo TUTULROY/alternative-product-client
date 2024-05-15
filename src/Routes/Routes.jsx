@@ -12,6 +12,7 @@ import MyViewDetails from "../MyViewDetails/MyViewDetails";
 import AddRecommendation from "../AddRecommendation/AddRecommendation";
 import UpdatePage from "../UpdatePage/UpdatePage";
 import MyRecommendation from "../MyRecommendation/MyRecommendation";
+import Recommendation from "../Recommendation/Recommendation";
 
 
 
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
             element:<PrivateRoutes>
                 <MyRecommendation></MyRecommendation>
             </PrivateRoutes>
+        },
+        {
+            path:'/recommendations',
+            element:<Recommendation></Recommendation>
         }
       ]
     },

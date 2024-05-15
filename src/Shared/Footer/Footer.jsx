@@ -4,7 +4,12 @@ const Footer = () => {
     return (
         <footer className="footer p-10 bg-base-200 text-base-content">
         <aside>
-          <img className='w-20' src={logo} alt="" />
+          <div className='lg:flex w-20'>
+          <img className='' src={logo} alt="" />
+          <h1 className='text-3xl'>
+            T.R Shop
+          </h1>
+          </div>
           <p>T.R Industries Ltd.<br/>Providing reliable tech since 2021</p>
         </aside> 
         <nav>
